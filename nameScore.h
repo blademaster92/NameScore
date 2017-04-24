@@ -8,12 +8,13 @@ class nameScore
 {
 public:
 	nameScore();
-	nameScore(string nameText);
+	nameScore(string nameText, int pos);
 	void setName(string nameText);
 	string getName();
 	int getFinalScore();
 	int getSum();
 	void setSum();
+	int getPos();
 
 private:
 	string _nameText;
