@@ -11,7 +11,6 @@ public:
 	nameScore(string nameText, int pos);
 	void setName(string nameText);
 	string getName();
-	int getFinalScore();
 	int getSum();
 	void setSum();
 	int getPos();
@@ -19,8 +18,7 @@ public:
 private:
 	string _nameText;
 	int _pos;
-	int _sum;
-	int _finalScore;
+	int _sum = 0;
 
 };
 
