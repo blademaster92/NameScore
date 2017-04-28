@@ -5,16 +5,14 @@ using namespace std;
 
 nameScore::nameScore() {
 	_nameText = "blah";
-	_finalScore = 0;
-	_sum = 0;
 	_pos = 0;
+	setSum();
 }
 
 nameScore::nameScore(string nameText, int pos) {
 	_nameText = nameText;
-	_finalScore = 0;
-	_sum = 0;
 	_pos = pos;
+	setSum();
 }
 
 void nameScore::setName(string nameText) {
@@ -25,31 +23,21 @@ string nameScore::getName() {
 	return _nameText;
 }
 
-int nameScore::getFinalScore() {
-	return _finalScore;
+void nameScore::setSum()
+{
+	int num = 0;
+	for (int j = 0; j < _nameText.length(); ++j) {
+		if (!isspace(_nameText[j])) {
+			num = (int)(toupper(_nameText[j]) - 'A' + 1);
+		}
+		_sum += num;
+	}
+	//cout << _pos << ": " << _nameText << " " << _sum << " = " << (_sum*_pos) << endl;
+	//uncomment above line to see list of all names + each of their sums and final scores
 }
 
 int nameScore::getSum() {
-	setSum();
 	return _sum;
-}
-
-void nameScore::setSum() {
-	string name = this->getName();
-	int sum = 0;
-	char base = ' ';
-	char lowBase = '`';
-	char upperBase = '@';
-	for (int i = 0; i < name.length(); i++) {
-		if (name[i] >= 'A' && name[i] <= 'Z') {
-			base = upperBase;
-		}
-		else if (name[i] >= 'z' && name[i] <= 'z') {
-			base = lowBase;
-		}
-		int value = name[i] - base;
-		sum += value;
-	}	_sum = sum;
 }
 
 int nameScore::getPos()
