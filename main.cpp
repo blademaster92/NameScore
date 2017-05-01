@@ -1,3 +1,5 @@
+//IGNORE, THIS IS AN OLDER VERSION OF MAIN.cpp
+/*
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -37,4 +39,4 @@ int main() {
 	system("pause");
 	return 0;
 }
-	
+*/	
